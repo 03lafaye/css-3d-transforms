@@ -6,7 +6,7 @@
      -moz-perspective: 800px;
       -ms-perspective: 800px;
        -o-perspective: 800px;
-          perspective: 800px; 
+          perspective: 800px;
   -webkit-perspective-origin: 50% 50%;
      -moz-perspective-origin: 50% 50%;
       -ms-perspective-origin: 50% 50%;
@@ -14,12 +14,12 @@
           perspective-origin: 50% 50%;
 }
 .perspective .cube {
-  display: block;  
-  position: absolute; 
-  height: 200px;  
-  width: 200px;
-  top: 60px;
-  left:100px;
+  display: block;
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  top: 0px;
+  left:0px;
   -webkit-transform-style: preserve-3d;
      -moz-transform-style: preserve-3d;
       -ms-transform-style: preserve-3d;
@@ -79,11 +79,11 @@
           transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg);
 }
 
-.perspective .front, .perspective .back, .perspective .top, 
+.perspective .front, .perspective .back, .perspective .top,
 .perspective .left, .perspective .bottom, .perspective .right {
-  position: absolute;  
-  height: 200px;  
-  width: 200px;
+  position: absolute;
+  height: 100px;
+  width: 100px;
   -webkit-backface-visibility: visible;
      -moz-backface-visibility: visible;
       -ms-backface-visibility: visible;
@@ -92,7 +92,7 @@
 }
 .perspective .front {
   -webkit-transform: translate3d(0 ,0, 100px);
-     -moz-transform: translate3d(0, 0, 100px); 
+     -moz-transform: translate3d(0, 0, 100px);
       -ms-transform: translate3d(0, 0, 100px);
        -o-transform: translate3d(0, 0, 100px);
           transform: translate3d(0, 0, 100px);

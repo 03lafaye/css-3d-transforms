@@ -1,24 +1,80 @@
-.cube li { 
-  float: left;
-  padding-right: 1em;
-  list-style: none;
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background-color: black;
 }
-.cube {
-  overflow: auto;
-}
-.perspective .cube li {
-  float: none;
+* {
+  margin: 0;
   padding: 0;
 }
-.perspective .cube {
-  overflow: visible;
+.container {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    top: 100px;
+    left: 200px;
+    -webkit-perspective: 800px;
+    -webkit-perspective-origin: 50% 50%;
 }
-.perspective .cube li{
-  background: rgba(50,200,0,0.8);
-  font-size:50px;
-  line-height: 200px;
-  text-align: center;
-  height: 200px;
-  width: 200px;
-  float:none;
-} 
+.subCube {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: 1s;
+    /*-webkit-animation: spin 8s infinite linear;*/
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotateY(0); }
+    to   { -webkit-transform: rotateY(-360deg); }
+}
+.subCube.frontTransform {
+    -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+}
+.subCube.leftTransform {
+    -webkit-transform: rotateX(0deg) rotateY(-90deg) rotateZ(0deg);
+}
+.subCube.backTransform {
+    -webkit-transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg);
+}
+.subCube.rightTransform {
+    -webkit-transform: rotateX(0deg) rotateY(90deg) rotateZ(0deg);
+}
+.subCube.bottomTransform {
+    -webkit-transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg);
+}
+.subCube.topTransform {
+    -webkit-transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg);
+}
+.front, .back, .top, .left, .bottom, .right {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  -webkit-backface-visibility: visible;
+}
+.front {
+  background-color: white;
+  -webkit-transform: rotateY(0deg) translate3d(0 ,0, 50px);
+}
+.back {
+  background-color: red;
+  -webkit-transform: rotateY(180deg) translate3d(0, 0, 50px);
+}
+.left {
+  background-color: blue;
+  -webkit-transform: rotateY(90deg) translate3d(0, 0, 50px);
+}
+.right {
+  background-color: green;
+  -webkit-transform: rotateY(-90deg) translate3d(0, 0, 50px);
+}
+.top {
+  background-color: orange;
+  -webkit-transform: rotateX(90deg) translate3d(0, 0, 50px);
+}
+.bottom {
+  background-color: yellow;
+  -webkit-transform: rotateX(-90deg) translate3d(0, 0, 50px);
+}
